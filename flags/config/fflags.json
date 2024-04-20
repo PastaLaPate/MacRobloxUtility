@@ -1,4 +1,4 @@
 {
   "DFIntCanHideGuiGroupId": 16194685,
-  "FFlagDebugGraphicsPreferVulkan": true
+  "FFlagGameBasicSettingsFramerateCap": true
 }

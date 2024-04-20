@@ -62,15 +62,11 @@ def getParsedFFLags():
 def update_fflags_route():
     try:
         configPath = os.path.dirname(os.path.abspath(__file__)) + "/flags/config/fflags.json"
-        currentConfig = None
-        with open(configPath, "r") as config:
-            currentConfig = json.loads(config.read())
         with open(configPath, "w") as config:
             requestConfig = request.get_json(force=True) # Force to avoid to have the Content-Type: application/json header
             for key in list(requestConfig):
                 if (requestConfig[key] == False):
                     del requestConfig[key]
-            print("requestConfig",requestConfig)
             config.write(json.dumps(requestConfig,indent=2))
         updateFFlags()
         return jsonify({'message': 'success'})

@@ -10,8 +10,7 @@
 import subprocess, signal, time
 
 python_backend_process = subprocess.Popen(["python3", "web.py"]) # Py for python 1.12 python for python<1.12
-time.sleep(1.5)
-
+time.sleep(0.5)
 node_frontend_process = subprocess.Popen("npm start", cwd = "./frontend/", shell=True)
 
 try:
